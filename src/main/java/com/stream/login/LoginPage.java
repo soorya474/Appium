@@ -63,6 +63,7 @@ public class LoginPage {
 	}
 
 	public void login(String username, String password) throws Exception {
+		
 		validateSignInpage(driver);
 		waitUntilElt(usernameTxtBox(driver));
 		usernameTxtBox(driver).sendKeys(username);

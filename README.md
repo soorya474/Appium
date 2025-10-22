@@ -45,3 +45,6 @@ Contains
 1.Suite name
 2.Platform parameter (Android / iOS)
 3.Class under test
+
+8.Reporting
+Can view the emailablereport.html under the testoutput folder
