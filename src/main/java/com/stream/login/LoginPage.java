@@ -53,7 +53,7 @@ public class LoginPage {
 	}
 
 	public WebElement ErrorText(WebDriver driver) {
-		element = driver.findElement(By.xpath("//li[contains(text(),'These credentials do not match our records')]"));
+		element = driver.findElement(By.xpath("//div[@data-test-ref='login-form']//ul//li[contains(text(),'These credentials do not match our records.')]"));
 		return element;
 	}
 
