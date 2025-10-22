@@ -3,6 +3,7 @@ package com.stream.driver;
 import java.net.URL;
 import java.time.Duration;
 
+import org.openqa.selenium.MutableCapabilities;
 import org.openqa.selenium.SessionNotCreatedException;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterSuite;
@@ -38,12 +39,23 @@ public class CommonStudio {
 				System.out.println("############SessionNotCreatedException############");
 			}
 		} else if (platformName.equals("ios")) {
+			String username = "";
+			String accessKey = "";
+
 			XCUITestOptions iosOptions = new XCUITestOptions().setPlatformName("iOS").setDeviceName("iPhone 15")
 					.setAutomationName("XCUITest").withBrowserName("Safari");
+			MutableCapabilities sauceOptions = new MutableCapabilities();
+			sauceOptions.setCapability("username", "oauth-soorya474-e3");
+			sauceOptions.setCapability("appiumVersion", "latest");
+			sauceOptions.setCapability("accessKey", "2ffb4a54-6c71-46aa-94cb-78d21f120");
+			sauceOptions.setCapability("build", "appium-build-JQD5H");
+			sauceOptions.setCapability("name", "test");
+			iosOptions.setCapability("sauce:options", sauceOptions);
 
+			// Start the session
+			URL url = new URL("https://ondemand.eu-central-1.saucelabs.com:443/wd/hub");
 			try {
-				driver = new IOSDriver(new URL("http://127.0.0.1:4723/"), iosOptions);// Provide the browserstack
-																						// connection url
+				driver = new IOSDriver(url, iosOptions); // connection url
 				System.out.println("***********Driver has initiated***********");
 			} catch (SessionNotCreatedException e2) {
 				System.out.println("############SessionNotCreatedException############");
