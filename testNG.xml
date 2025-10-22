@@ -3,22 +3,18 @@
 
 <suite name="SimplestreamMobileLoginSuite" parallel="false">
 
-  <parameter name="platformName" value="Android"/>
- 
+	<parameter name="platformName" value="Android" />
+	<test name="Simplestream Login Tests">
+		<classes>
+			<class name="appiumTest.LoginTest" />
+		</classes>
+	</test>
 
-  <test name="Simplestream Login Tests">
-    <classes>
-      <class name="appiumTest.LoginTest"/>
-    </classes>
-  </test>
-  
-   <parameter name="platformName" value="IOS"/>
- 
-
-  <test name="Simplestream Login Tests">
-    <classes>
-      <class name="appiumTest.LoginTest"/>
-    </classes>
-  </test>
+	<parameter name="platformName" value="IOS" />
+	<test name="Simplestream Login Tests">
+		<classes>
+			<class name="appiumTest.LoginTest" />
+		</classes>
+	</test>
 
 </suite>
