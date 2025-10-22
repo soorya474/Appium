@@ -36,12 +36,9 @@ public class Base {
             .setPlatformName("Android")
             .setDeviceName("emulator-5554")
             .setAutomationName("UiAutomator2")
-            
-             .setNewCommandTimeout(Duration.ofSeconds(300)).
-           withBrowserName("Chrome");
+            .setNewCommandTimeout(Duration.ofSeconds(300))
+            .withBrowserName("Chrome");
             //setChromedriverExecutableDir("C:\\Tools\\chromeDrivers");
-     
-
         AndroidDriver driver = new AndroidDriver(new URL("http://127.0.0.1:4723/"), options);
 
         System.out.println("Driver initiated succesfully");
