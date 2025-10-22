@@ -62,7 +62,7 @@ public class LoginPage {
 		return element;
 	}
 
-	public void login(String username, String password, boolean result) throws Exception {
+	public void login(String username, String password) throws Exception {
 		validateSignInpage(driver);
 		waitUntilElt(usernameTxtBox(driver));
 		usernameTxtBox(driver).sendKeys(username);
@@ -77,8 +77,8 @@ public class LoginPage {
 		waitUntilElt(signInButton(driver));
 		driver.manage().deleteAllCookies();
 		signInButton(driver).click();
-		waitUntilElt(HomePageText(driver));
-		validateHomePage(driver, result);
+//		waitUntilElt(HomePageText(driver));
+		//validateHomePage(driver, result);
 	}
 
 	/**
@@ -140,10 +140,12 @@ public class LoginPage {
 	 */
 	public void validateHomePage(WebDriver driver, boolean actual) {
 		if (actual) {
+			waitUntilElt(HomePageText(driver));
 			boolean displayed = HomePageText(driver).isDisplayed();
 			Assert.assertTrue(displayed, "***Home Page is Displayed***");
 			System.out.println("Login done");
 		} else {
+			waitUntilElt(ErrorText(driver));
 			boolean displayed = ErrorText(driver).isDisplayed();
 			Assert.assertTrue(displayed, "***Login is  not succesful***");
 			System.out.println("Login not done");
