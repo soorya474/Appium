@@ -11,5 +11,14 @@
       <class name="appiumTest.LoginTest"/>
     </classes>
   </test>
+  
+   <parameter name="platformName" value="IOS"/>
+ 
+
+  <test name="Simplestream Login Tests">
+    <classes>
+      <class name="appiumTest.LoginTest"/>
+    </classes>
+  </test>
 
 </suite>

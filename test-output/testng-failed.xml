@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [SimplestreamMobileLoginSuite]" guice-stage="DEVELOPMENT">
+  <parameter name="platformName" value="Android"/>
+  <test thread-count="5" name="Simplestream Login Tests(failed)">
+    <classes>
+      <class name="appiumTest.LoginTest">
+        <methods>
+          <include name="tearDown"/>
+          <include name="verifyUserLogin" invocation-numbers="1"/>
+          <include name="resetBrowser"/>
+          <include name="setCaps"/>
+        </methods>
+      </class> <!-- appiumTest.LoginTest -->
+    </classes>
+  </test> <!-- Simplestream Login Tests(failed) -->
+</suite> <!-- Failed suite [SimplestreamMobileLoginSuite] -->

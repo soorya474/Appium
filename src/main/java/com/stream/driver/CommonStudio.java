@@ -50,7 +50,7 @@ public class CommonStudio {
 			        .withBrowserName("Safari");
 			        
 			 try {
-				 driver = new IOSDriver(new URL("http://127.0.0.1:4723/"), iosOptions);
+				 driver = new IOSDriver(new URL("http://127.0.0.1:4723/"), iosOptions);//Provide the browserstack connection url
 				 System.out.println("***********Driver has initiated***********");
 		}
 			catch (SessionNotCreatedException e2) {
@@ -66,7 +66,7 @@ public class CommonStudio {
 	    public void resetBrowser() {
 	        try {
 	                driver.manage().deleteAllCookies();
-	                System.out.println("Broswer rest done before test");
+	                System.out.println("Broswer reset  is done before test");
 	                driver.get("https://www.wwgoa.com/login");
 	                
 	                          }
